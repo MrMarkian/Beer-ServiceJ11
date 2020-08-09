@@ -16,12 +16,12 @@ public class BeerLoader implements CommandLineRunner {
         this.beerRepository = beerRepository;
     }
 
-    /**
-     * Callback used to run the bean.
-     *
-     * @param args incoming main method arguments
-     * @throws Exception on error
-     */
+
+    public static final String BEER_1_UPC = "0631234620453";
+    public static final String BEER_2_UPC = "0631235321062";
+    public static final String BEER_3_UPC = "0631244324569";
+
+
     @Override
     public void run(String... args) throws Exception {
         loadBeerObjects();
@@ -34,7 +34,7 @@ public class BeerLoader implements CommandLineRunner {
             .beerName("Mango Bobs")
             .beerStyle("IPA")
             .quantityToBrew(200)
-                    .upc(378937973987L)
+                    .upc(BeerLoader.BEER_1_UPC)
                     .price(new BigDecimal("12.95"))
             .build());
 
@@ -42,7 +42,7 @@ public class BeerLoader implements CommandLineRunner {
                     .beerName("Galaxy Cat")
                     .beerStyle("PALE_ALE")
                     .quantityToBrew(250)
-                    .upc(8675309L)
+                    .upc(BeerLoader.BEER_2_UPC)
                     .price(new BigDecimal("10.99"))
                     .build());
         }
